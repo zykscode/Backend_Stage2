@@ -40,7 +40,7 @@ app.use(express.json())
 
 // applying cors as middleware to handle cor errors
 app.use(cors())
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 
 
 const getOp = (string:string) => {

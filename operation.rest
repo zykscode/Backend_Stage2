@@ -4,5 +4,5 @@ content-type: application/json
 {
     "operation_type": "Can you please add the following numbers together - 13 and 25",
     "x":12,
-    "y":"66"
+    "y":"66rrr"
 }
