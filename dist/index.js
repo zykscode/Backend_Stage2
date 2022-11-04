@@ -1,7 +1,29 @@
 const express = require('express');
 require('dotenv').config();
 const cors = require('cors');
-const calculator = require('./calculator');
+const convertToNumber = (a) => {
+    return (Number(a));
+};
+//  Cannot re-declare block-scoped variable "calculator".
+const calculator = (a, b, op) => {
+    const newX = convertToNumber(a);
+    const newY = convertToNumber(b);
+    if (isNaN(newX) || isNaN(newY)) {
+        return (`please give an integer for ${isNaN(newX) ? 'X' : 'Y'}`);
+    }
+    else {
+        switch (op) {
+            case 'addition':
+                return newX + newY;
+            case 'subtraction':
+                return newX - newY;
+            case 'multiplication':
+                return newX * newY;
+            default:
+                throw new Error('Operation is not add, subtract or multiply!');
+        }
+    }
+};
 // get an instance of the express app
 const app = express();
 // json parseer to use on the body of the request
